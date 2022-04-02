@@ -33,4 +33,6 @@ void mqtt() {
     char stringBuffer7[6];
     dtostrf(avg3, 2, 2, stringBuffer7);
     client.publish("avg3",stringBuffer7);
+
+  
 }

@@ -1,4 +1,4 @@
-void reconnect() {
+void reconnec() {
 
 if (!client.connected()) {
 

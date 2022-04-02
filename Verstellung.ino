@@ -1,7 +1,9 @@
-  void verstellung() {
-hoehe.attach(10); 
-breite.attach(11); 
-/*breite*/
+void verstellung() {
+  digitalWrite(33, HIGH);
+ hoehe.attach(22); 
+breite.attach(23); 
+delay(300);
+//breite
     if (((avg0 + avg2) * f) < (avg1 + avg3))
     {
    Serial.println("nach rechts drehen");
@@ -22,7 +24,7 @@ breite.attach(11);
    Serial.println("nichts"); 
 
 
-/*höhe*/
+//höhe
     if (((avg0 + avg1) * f) < (avg2 + avg3))
     {
    Serial.println("nach unten");
@@ -48,7 +50,13 @@ breite.attach(11);
   Serial.println(a);
     Serial.println(b);
 
-     delay(500);
-hoehe.attach(7); 
-breite.attach(8);
+     delay(300);
+  hoehe.detach();
+ breite.detach();     
+//hoehe.attach(12); 
+//breite.attach(13);
+
+
+
+
 }

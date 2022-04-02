@@ -1,15 +1,21 @@
 void abend() {
-  if (uptime > 1500 && r == 0){
+  if (a < 20 && avgu < 5.5){
     
-    hoehe.attach(10); 
-    breite.attach(11); 
+ hoehe.attach(22); 
+breite.attach(23); 
+delay(300);
     
-    breite.write(140);
+    breite.write(180);
     hoehe.write(140);
-    delay(2000);
-    hoehe.attach(7); 
-    breite.attach(8);
-    for(;;){}
+    delay(5000);
+  hoehe.detach();
+ breite.detach();   
+ delay (5000);
+      client.connect("SolarWifi", "Tricor", "urbanus");
+    client.publish("Solstate", "Abendroutine durchgeführt, gute Nacht!");
+   while (dn < 9999){
+   delay (5000);
+   dn++;}
     
   }
 }
