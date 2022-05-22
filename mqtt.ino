@@ -1,8 +1,12 @@
-void mqtt() {
- client.connect("SolarWifi", "Tricor", "urbanus");
- // Serial.println(a);
- // Serial.println(b);
- //  Serial.println("connect done");
+void mqtt() 
+{
+if (!client.connected())
+    { 
+    client.connect(MQTTclient, MQTTuser, MQTTpassw);
+    }
+
+else
+    {
     char stringBuffer1[6];
     dtostrf(avgu, 2, 2, stringBuffer1);
     client.publish("avgu",stringBuffer1);
@@ -33,6 +37,5 @@ void mqtt() {
     char stringBuffer7[6];
     dtostrf(avg3, 2, 2, stringBuffer7);
     client.publish("avg3",stringBuffer7);
-
-  
+    }
 }
