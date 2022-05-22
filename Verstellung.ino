@@ -10,6 +10,9 @@ if (init1==0)
     //a = (-18 * Zeit) + 343;
     Serial.println(a);
     Serial.println("fertig kopiert");
+    char stringBuffer2[6];
+    dtostrf(a, 2, 2, stringBuffer2);
+    client.publish(MQTTstatus,stringBuffer2);
     init1 = 1;
     }
   }
@@ -31,6 +34,7 @@ else if (avgu > 8 || verstellung_counter > 0)
       Serial.println("nach rechts drehen");
       if (a > 0) 
         {
+        a--;
         a--;
         breite.write(a);
         }
@@ -58,21 +62,22 @@ else if (avgu > 8 || verstellung_counter > 0)
         b++;
         hoehe.write(b);
         }
-      else if (((avg2 + avg3) * f) < (avg0 + avg1))
+      }  
+    else if (((avg2 + avg3) * f) < (avg0 + avg1))
+      {
+      Serial.println("nach oben"); 
+      
+      if (b > 60) 
         {
-        Serial.println("nach oben"); 
-        
-        if (b > 60) 
-          {
-          b--;
-          hoehe.write(b);
-          }
-        }
-      else
-        {
-        Serial.println("nichts"); 
+        b--;
+        hoehe.write(b);
         }
       }
+    else
+      {
+      Serial.println("nichts"); 
+      }
+    
     Serial.println(a);
     Serial.println(b);
     } 

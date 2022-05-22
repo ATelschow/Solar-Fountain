@@ -43,7 +43,7 @@ char ssid[] = "FRITZ!Box Fon WLAN 7270";
 char pass[] = "32548AE9ZQ234RS42";           
 int status = WL_IDLE_STATUS;
 
-char MQTTclient[] = "Test1";
+char MQTTclient[] = "SolarWifi";
 char MQTTuser[] = "Tricor";
 char MQTTpassw[] = "urbanus";
 char MQTTstatus[] = "Solstate";
@@ -348,7 +348,7 @@ void Task2code( void * pvParameters )
 
 void loop() {
 
-//abend();
+abend();
 
 
 EVERY_N_MILLISECONDS(100) 
