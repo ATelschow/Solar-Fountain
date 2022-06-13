@@ -35,6 +35,9 @@ int lastr = 0;
 int z = 0;
 int init1=0;
 int initcnt=0;
+int batterie_an = 0;
+float breitendiff = 0;
+float hoehendiff = 0;
 
 int verstellung_counter = 0;
 
@@ -292,6 +295,7 @@ pinMode(17, OUTPUT);
 pinMode(22, OUTPUT);
 pinMode(23, OUTPUT);
 pinMode(33, OUTPUT);
+pinMode(12, OUTPUT);
 #pragma endregion set_Pins
 
 #pragma region Taskcreation
@@ -372,6 +376,7 @@ EVERY_N_MILLISECONDS(500)
 EVERY_N_SECONDS(2) 
   {
   mqtt();
+  batterie();
   }
 
  

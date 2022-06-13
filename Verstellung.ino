@@ -28,11 +28,13 @@ else if (avgu > 8 || verstellung_counter > 0)
 
   else if (verstellung_counter == 4)
     {
+    // hoehe.attach(22); 
+    // breite.attach(23); 
     //breite
     if (((avg0 + avg2) * f) < (avg1 + avg3))
       {
       Serial.println("nach rechts drehen");
-      if (a > 0) 
+      if (a > 1) 
         {
         a--;
         a--;
@@ -78,10 +80,20 @@ else if (avgu > 8 || verstellung_counter > 0)
       Serial.println("nichts"); 
       }
     
+    // hoehe.detach();
+    // breite.detach();    
+    char stringBuffer2[6];
+    dtostrf(a, 2, 2, stringBuffer2);
+    client.publish("a",stringBuffer2);
+    
+    char stringBuffer3[6];
+    dtostrf(b, 2, 2, stringBuffer3);
+    client.publish("b",stringBuffer3);
+
     Serial.println(a);
     Serial.println(b);
     } 
-  else if (verstellung_counter == 7)
+  else if (verstellung_counter == 5)
     {
     hoehe.detach();
     breite.detach();     

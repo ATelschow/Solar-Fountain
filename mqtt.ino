@@ -11,14 +11,14 @@ else
     dtostrf(avgu, 2, 2, stringBuffer1);
     client.publish("avgu",stringBuffer1);
 
-    char stringBuffer2[6];
-    dtostrf(a, 2, 2, stringBuffer2);
-    client.publish("a",stringBuffer2);
+    // char stringBuffer2[6];
+    // dtostrf(a, 2, 2, stringBuffer2);
+    // client.publish("a",stringBuffer2);
 
     
-    char stringBuffer3[6];
-    dtostrf(b, 2, 2, stringBuffer3);
-    client.publish("b",stringBuffer3);
+    // char stringBuffer3[6];
+    // dtostrf(b, 2, 2, stringBuffer3);
+    // client.publish("b",stringBuffer3);
 
     
     char stringBuffer4[6];
@@ -37,5 +37,17 @@ else
     char stringBuffer7[6];
     dtostrf(avg3, 2, 2, stringBuffer7);
     client.publish("avg3",stringBuffer7);
+
+    breitendiff = (((avg0 + avg2) - (avg1 + avg3)) / (avg0 + avg2*1.00)) * 100;
+    hoehendiff = (((avg0 + avg1) - (avg2 + avg3)) / (avg0 + avg1*1.00)) * 100;
+
+    char stringBuffer8[6];
+    dtostrf(breitendiff, 2, 2, stringBuffer8);
+    client.publish("breitendiff",stringBuffer8);
+    
+    char stringBuffer9[6];
+    dtostrf(hoehendiff, 2, 2, stringBuffer9);
+    client.publish("hoehendiff",stringBuffer9);
+
     }
 }

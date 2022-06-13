@@ -23,7 +23,7 @@ void mittelwertbildung(){
   avg1= avg1 / 30*1.04;
   avg2= avg2 / 30*1;
   avg3= avg3 / 30 *1.17;
-  avgu= avgu / 30 / 197.13 ;
+  avgu= avgu / 30 / 201.75 ;
  
   // Serial.println("Analog Value :");
   // Serial.println(avg0);

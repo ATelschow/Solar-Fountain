@@ -1,6 +1,6 @@
 void relais() 
 {
-if (r == 0 && avgu > 13)
+if (r == 0 && avgu > 11)
   {
   digitalWrite(17, HIGH);
   r = 1;
